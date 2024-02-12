@@ -3,13 +3,13 @@ const canvasEl = document.querySelector(".matrix");
 canvasEl.height = window.innerHeight;
 canvasEl.width = window.innerWidth;
 const ctx = canvasEl.getContext("2d");
-ctx.font = "30px Matrix";
+const fontSize = 24;
+ctx.font = `${fontSize}px Matrix`;
 
-const colsNumbers = canvasEl.width / 15;
+const colsNumbers = canvasEl.width / fontSize;
 console.log(Math.round(colsNumbers));
 
 const chars = `1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./!@#$%^&*()_+`;
-chars.le;
 const posY = [];
 for (let i = 0; i < colsNumbers; i++) {
   posY[i] = -Math.round(Math.random() * 1000);
@@ -25,10 +25,10 @@ function matrix() {
     ctx.fillStyle = "rgba(0,255,50,1)";
     let char = Math.random() > 0.4 ? 1 : 0;
     ctx.fillText(getRandomChar(chars), x, posY[i]);
-    x = x + 30;
+    x = x + fontSize;
   }
   for (let i = 0; i < colsNumbers; i++) {
-    posY[i] = posY[i] + 30;
+    posY[i] = posY[i] + fontSize;
     if (posY[i] > canvasEl.height + Math.round(Math.random() * 100)) {
       posY[i] = -Math.round(Math.random() * 1000);
     }
