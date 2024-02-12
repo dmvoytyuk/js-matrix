@@ -18,7 +18,7 @@ function changeCanvasSize() {
 ctx.font = "20px Tahoma";
 let y = -9;
 function matrix() {
-  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillStyle = "rgba(0,0,0,0.098)";
   ctx.fillRect(0, 0, canvasEl.width, canvasEl.height);
   // draw raws
   let x = 10;
@@ -34,7 +34,7 @@ function matrix() {
   ctx.fillStyle = "rgba(0,255,50,1)";
   let char = Math.random() > 0.4 ? 1 : 0;
   ctx.fillText(char, x, y);
-  setTimeout(matrix, 20);
+  setTimeout(matrix, 70);
   y = y + 20;
   if (y > canvasEl.height + 20) {
     y = -9;
