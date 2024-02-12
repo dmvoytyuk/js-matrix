@@ -23,7 +23,6 @@ function matrix() {
   let x = 3;
   for (let i = 0; i < colsNumbers; i++) {
     ctx.fillStyle = "rgba(0,255,50,1)";
-    let char = Math.random() > 0.4 ? 1 : 0;
     ctx.fillText(getRandomChar(chars), x, posY[i]);
     x = x + fontSize;
   }
