@@ -33,7 +33,7 @@ function matrix() {
     }
   }
 
-  setTimeout(matrix, 100);
+  setTimeout(matrix, 70);
 }
 
 matrix();
