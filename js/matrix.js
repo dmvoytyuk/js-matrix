@@ -1,15 +1,18 @@
 const canvasEl = document.querySelector(".matrix");
-// const dpr = window.devicePixelRatio;
+
 canvasEl.height = window.innerHeight;
 canvasEl.width = window.innerWidth;
 const ctx = canvasEl.getContext("2d");
+
+//set font
 const fontSize = 24;
 ctx.font = `${fontSize}px Matrix`;
 
 const colsNumbers = canvasEl.width / fontSize;
-console.log(Math.round(colsNumbers));
 
 const chars = `1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./!@#$%^&*()_+`;
+
+// randomize initial Y position for each column
 const posY = [];
 for (let i = 0; i < colsNumbers; i++) {
   posY[i] = -Math.round(Math.random() * 1000);
@@ -36,8 +39,10 @@ function matrix() {
   setTimeout(matrix, 90);
 }
 
+//enter the matrix
 matrix();
 
+// refresh window on resize
 window.addEventListener("resize", changeCanvasSize);
 function changeCanvasSize() {
   canvasEl.height = window.innerHeight;
@@ -47,10 +52,11 @@ function changeCanvasSize() {
   location.reload();
 }
 
+ctx.fillStyle = "rgba(0,0,0,1)";
+ctx.fillRect(0, 0, canvasEl.width, canvasEl.height);
+
+// tools
 function getRandomChar(chars) {
   const number = Math.random() * chars.length;
   return chars.charAt(number);
 }
-
-ctx.fillStyle = "rgba(0,0,0,1)";
-ctx.fillRect(0, 0, canvasEl.width, canvasEl.height);
